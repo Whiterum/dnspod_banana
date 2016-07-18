@@ -1,0 +1,43 @@
+{
+  "name": "dnspod_banana",
+  "version": "1.0.0",
+  "description": "learn more",
+  "main": "app.js",
+  "scripts": {
+    "test": "node test.js",
+    "start": "node dist/app.js",
+    "build": "babel src -d dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BezosLi/dnspod_banana.git"
+  },
+  "keywords": [
+    "dnspod"
+  ],
+  "author": "BezosLi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BezosLi/dnspod_banana/issues"
+  },
+  "homepage": "https://github.com/BezosLi/dnspod_banana#readme",
+  "dependencies": {
+    "babel-polyfill": "^6.9.1",
+    "koa": "^2.0.0",
+    "koa-bodyparser": "^3.1.0",
+    "koa-convert": "^1.2.0",
+    "koa-generic-session": "^1.11.1",
+    "koa-logger": "^2.0.0",
+    "koa-redis": "^2.1.1",
+    "koa-router": "^5.4.0",
+    "koa-static": "^2.0.0",
+    "mysql": "^2.11.1"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.10.1",
+    "babel-preset-es2015": "^6.9.0",
+    "babel-preset-stage-3": "^6.11.0",
+    "babel-register": "^6.9.0",
+    "supervisor": "^0.11.0"
+  }
+}
