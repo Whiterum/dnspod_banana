@@ -6,7 +6,7 @@ log4js.configure('configure.json', {
 const access = log4js.getLogger('access');
 access.setLevel("TRACE");
 
-export default async(ctx, next) => {
+export default async (ctx, next) => {
     try {
         let logInfo = [];
         let startTime = new Date().getTime();

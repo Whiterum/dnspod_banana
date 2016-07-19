@@ -6,10 +6,6 @@ var _koa = require('koa');
 
 var _koa2 = _interopRequireDefault(_koa);
 
-var _mysql = require('mysql');
-
-var _mysql2 = _interopRequireDefault(_mysql);
-
 var _koaStatic = require('koa-static');
 
 var _koaStatic2 = _interopRequireDefault(_koaStatic);
@@ -18,36 +14,48 @@ var _koaRouter = require('koa-router');
 
 var _koaRouter2 = _interopRequireDefault(_koaRouter);
 
-var _koaLogger = require('koa-logger');
+var _logger = require('./common/logger');
 
-var _koaLogger2 = _interopRequireDefault(_koaLogger);
+var _logger2 = _interopRequireDefault(_logger);
 
-var _koaGenericSession = require('koa-generic-session');
-
-var _koaGenericSession2 = _interopRequireDefault(_koaGenericSession);
+var _envconf = require('./config/envconf');
 
 var _koaConvert = require('koa-convert');
 
 var _koaConvert2 = _interopRequireDefault(_koaConvert);
 
-var _koaRedis = require('koa-redis');
+var _routes = require('./routes');
 
-var _koaRedis2 = _interopRequireDefault(_koaRedis);
+var _routes2 = _interopRequireDefault(_routes);
+
+var _koaBodyparser = require('koa-bodyparser');
+
+var _koaBodyparser2 = _interopRequireDefault(_koaBodyparser);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+// import session from 'koa-generic-session';
+// import redisStore from 'koa-redis';
+
 var app = new _koa2.default();
+var router = new _koaRouter2.default();
 
-app.use((0, _koaLogger2.default)());
+// static server
+app.use((0, _koaConvert2.default)((0, _koaStatic2.default)('static')));
 
-app.use(function (ctx) {
-	ctx.response.status = 200;
-	ctx.body = 'hello world';
-});
+// body parser
+app.use((0, _koaBodyparser2.default)());
+
+// logger
+app.use(_logger2.default);
+
+// routes
+(0, _routes2.default)(router);
+app.use(router.routes());
 
 //catch uncatchEXception
 process.on('uncaughtException', function (err) {
-	console.log('uncaughtException' + err);
+  console.log('uncaughtException' + err);
 });
 
-app.listen(8088);
+app.listen(_envconf.port);
