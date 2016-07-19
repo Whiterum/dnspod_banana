@@ -28,10 +28,11 @@
     "koa-convert": "^1.2.0",
     "koa-generic-session": "^1.11.1",
     "koa-redis": "^2.1.1",
-    "koa-router": "^5.4.0",
+    "koa-router": "^7.0.1",
     "koa-static": "^2.0.0",
     "log4js": "^0.6.38",
-    "mysql": "^2.11.1"
+    "mysql": "^2.11.1",
+    "uuid": "^2.0.2"
   },
   "devDependencies": {
     "babel-cli": "^6.10.1",

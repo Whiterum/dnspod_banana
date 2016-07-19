@@ -1,10 +1,15 @@
-import log4js from 'log4js';
+import * as result from './result';
 
-log4js.configure('configure.json', {
-	cwd: "/home/bezos/services/dnspod_banana"
-})
-
-export const access = log4js.getLogger('access');
-access.setLevel("INFO");
-export const error  = log4js.getLogger('error');
-error.setLevel('ERROR');
+// make format for error
+export function formatError(err) {
+	let e = {};
+	switch(err.name) {
+		case '':
+			
+			break;
+		case '':
+			
+			break;
+	}
+	return e;
+}

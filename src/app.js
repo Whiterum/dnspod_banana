@@ -1,28 +1,29 @@
 import 'babel-polyfill';
 import Koa from 'koa';
-import mysql from 'mysql';
 import server from 'koa-static';
 import Router from 'koa-router';
-import session from 'koa-generic-session';
+// import session from 'koa-generic-session';
 import convert from 'koa-convert';
 import bodyParser from 'koa-bodyparser';
-import redisStore from 'koa-redis';
-import * as utils from './common/utils';
+// import redisStore from 'koa-redis';
+import logger from './common/logger';
+import dnsRoutes from './routes';
 
 const app = new Koa();
+const router = new Router();
 
-app.use(ctx => {
-	utils.access.info(ctx.host, ctx.url, ctx.method);
-})
-
+// static server
 app.use(convert(server('static')));
 
+// body parser
 app.use(bodyParser());
 
-app.use(ctx => {
-	ctx.response.status = 200;
-	ctx.body = 'hello world';
-})
+// logger
+app.use(logger);
+
+// routes
+dnsRoutes(router);
+app.use(router.routes());
 
 //catch uncatchEXception
 process.on('uncaughtException', function(err){

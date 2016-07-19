@@ -9,13 +9,6 @@
 			"maxLogsize": "20480",
 			"backups": "3",
 			"category": "access"
-		},
-		{
-			"type": "file",
-			"filename": "logs/error.log",
-			"maxLogsize": "20480",
-			"backups": "10",
-			"category": "error"
 		}
 	]
 }
