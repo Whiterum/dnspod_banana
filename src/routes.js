@@ -1,7 +1,14 @@
-import * as UserCtrl from './controllers/user.ctrl';
-// import * as DnsCtrl  from './controllers/dns.ctrl';
-// import * as RecoredCtrl from './controllers/record.ctrl';
+import * as DomainCtrl from './controllers/domain.ctrl';
+import * as RecordCtrl from './controllers/record.ctrl';
 
 export default function(router) {
-	router.get('/User.Detail', UserCtrl.userDetail);
+	router.post('/Domain.Create', DomainCtrl.create);
+	router.post('/Domain.List', DomainCtrl.getList);
+	router.post('/Domain.Remove', DomainCtrl.remove);
+
+	router.post('/Record.Create', RecordCtrl.create);
+	router.post('/Record.List', RecordCtrl.getList);
+	router.post('/Record.Modify', RecordCtrl.modify);
+	router.post('/Record.Remove', RecordCtrl.remove);
+	router.post('/Record.Search', RecordCtrl.search);
 }

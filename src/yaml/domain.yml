@@ -1,0 +1,4 @@
+namespace: 'domain'
+
+findAll: 
+    - select * from domain

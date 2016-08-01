@@ -10,7 +10,6 @@ export default async (ctx, next) => {
     try {
         let logInfo = [];
         let startTime = new Date().getTime();
-        logInfo.push(ctx.host);
         logInfo.push(ctx.url);
         logInfo.push(ctx.method);
         if (ctx.method === 'GET') {

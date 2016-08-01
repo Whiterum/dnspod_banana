@@ -1,0 +1,4 @@
+namespace: 'record'
+
+findAll: 
+    - select * from record
