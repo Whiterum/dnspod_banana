@@ -1,42 +1,6 @@
 import nodebatis from '../config/dbconf';
 
-// const create = (name) => {
-// 	return new Promise((resolve, reject) => {
-// 		try {
-// 			let time = new Date().toLocaleString();
-// 			let [create_on, update_on] = [time, time];
-// 			nodebatis.query('domain.insert', {name, create_on, update_on});
-// 			let domain = nodebatis.query('domain.findByName', {name});
-// 			resolve(domain);
-// 		} catch (err){
-// 			reject(err);
-// 		}
-// 	});
-// };
-
-// const remove = (id) => {
-// 	return new Promise((resolve, reject) => {
-// 		try {
-// 			let result = nodebatis.query('domain.delete', {id});
-// 			resolve(result);
-// 		} catch (err) {
-// 			reject (err);
-// 		}
-// 	})
-// }
-
-// const getList = (offset, length) => {
-// 	return new Promise((resolve, reject) => {
-// 		try {
-// 			let result = nodebatis.query('domain.getList', {offset, length});
-// 			resolve(result);
-// 		} catch (err) {
-// 			reject(err);
-// 		}
-// 	})
-// }
-
-const insert = name => {
+export const insert = name => {
 	return new Promise((resolve, reject) => {
 		try {
 			let time = new Date().toLocaleString();
@@ -52,7 +16,7 @@ const insert = name => {
 		}
 	})
 }
-const findByName = name => {
+export const findByName = name => {
 	return new Promise((resolve, reject) => {
 		let result = nodebatis.query('domain.findByName', {name});
 		result.then(domain => {
@@ -64,7 +28,7 @@ const findByName = name => {
 	})
 }
 
-const remove = id => {
+export const remove = id => {
 	return new Promise((resolve, reject) => {
 		let result = nodebatis.query('domain.remove', {id});
 		result.then(() => {
@@ -75,7 +39,7 @@ const remove = id => {
 	})
 }
 
-const getList = cond => {
+export const getList = cond => {
 	return new Promise((resolve, reject) => {
 		try {
 			let result;
@@ -96,7 +60,7 @@ const getList = cond => {
 	})
 }
 
-const findAll = () => {
+export const findAll = () => {
 	return new Promise((resolve, reject) => {
 		let result = nodebatis.query('domain.findAll');
 		result.then((value) => {
@@ -107,7 +71,7 @@ const findAll = () => {
 	})
 }
 
-const count = () => {
+export const count = () => {
 	return new Promise((resolve, reject) => {
 		let result = nodebatis.query('domain.count');
 		result.then(value => {
@@ -118,5 +82,3 @@ const count = () => {
 		})
 	})
 }
-
-export {insert, findByName, remove, getList, findAll, count}
