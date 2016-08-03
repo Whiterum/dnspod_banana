@@ -2,8 +2,8 @@ import code from './status_code'
 
 // successful
  
-const success = () => {
-	var result = {};
+function success() {
+	let result = {};
 	Object.assign(result, code(1), arguments[0]);
 	return result;
 }
@@ -13,4 +13,4 @@ const error = (num) => {
 	return code(num);
 }
 
-export {success, error};
+export {success, error}
