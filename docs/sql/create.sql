@@ -5,8 +5,8 @@ create table domain (
 	remark char(11), 
 	create_on datetime not null, 
 	update_on datetime not null, 
-	name char(20) not null, 
-	grade_title char(11), 
+	name char(20) unique not null,
+	grade_title char(11),
 	records tinyint
 )engine=innodb default charset utf8;
 

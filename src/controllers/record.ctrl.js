@@ -2,23 +2,23 @@ import {success, error} from '../common/result';
 import * as Domain from '../services/domain.service';
 import * as Record from '../services/record.service';
 
-const create = (ctx) => {
-	ctx.body = success();
+const create = async (ctx) => {
+	
 }
 
-const getList = (ctx) => {
-
+const getList = async (ctx) => {
+	
 }
 
-const modify = (ctx) => {
-
-}
-
-const remove = (ctx) => {
+const modify = async (ctx) => {
 
 }
 
-const search = (ctx) => {
+const remove = async (ctx) => {
+
+}
+
+const search = async (ctx) => {
 
 }
 

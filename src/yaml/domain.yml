@@ -4,9 +4,9 @@ findAll:
     - select * from domain
 
 getList: 
-    - select * from domain order by id limit:offset, :length
+    - select * from domain order by id limit :offset, :length
 
-findOneByName: 
+findByName: 
     - select id,name from domain where name = :name
 
 count:
@@ -15,6 +15,6 @@ count:
 insert: 
     - insert into domain (name,create_on,update_on) VALUES (:name,:create_on,:update_on)
 
-delete: 
+remove: 
     - delete from domain where id = :id
 
