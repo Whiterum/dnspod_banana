@@ -6,8 +6,14 @@ function success() {
 	return result;
 }
 
-const error = (num) => {
-	return code(num);
+function error() {
+	let result = {};
+	if (arguments.length === 2){
+		Object.assign(result, code(arguments[0]), arguments[1]);
+	} else if (arguments.length === 1) {
+		Object.assign(result, code(arguments[0]));
+	}
+	return result;
 }
 
 export {success, error}

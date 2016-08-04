@@ -1,4 +1,14 @@
 namespace: 'record'
 
+attrs: dns, name, type, value, mx, enable, update_on
+
 findAll: 
     - select * from record
+
+insert: 
+    - insert into record {{record.attrs}} values (:dns, name, :type, :value, :mx, :enable, :update_on)
+
+findByName: 
+    - select id from record where
+    - dns = :dns
+    - and name = :name    
