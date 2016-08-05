@@ -6,14 +6,14 @@ findAll:
 getList: 
     - select * from domain order by id limit :offset, :length
 
+insert: 
+    - insert into domain (name,create_on,update_on) VALUES (:name,:create_on,:update_on)
+
 findByName: 
     - select id,name from domain where name = :name
 
 count:
     - select count(id) as all_total from domain
-
-insert: 
-    - insert into domain (name,create_on,update_on) VALUES (:name,:create_on,:update_on)
 
 remove: 
     - delete from domain where id = :id

@@ -1,7 +1,7 @@
 import log4js from 'log4js';
 
 log4js.configure('configure.json', {
-    cwd: "/home/bezos/services/dnspod_banana"
+	cwd: "/home/bezos/node/dnspod_banana"
 })
 const access = log4js.getLogger('access');
 access.setLevel("TRACE");

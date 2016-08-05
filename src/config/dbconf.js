@@ -10,7 +10,12 @@ const nodebatis = new Nodebatis(path.resolve(__dirname, '../yaml'), {
 	port: 3306,
 	database: 'dnspod',
 	user: 'bezos',
-	password: '123456'
+	password: '123456',
+	pool: {
+		minsize: 5,
+		maxsize: 20,
+		acquireIncrement: 5
+	}
 });
 
 export default nodebatis

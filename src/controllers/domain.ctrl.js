@@ -15,7 +15,7 @@ export const create = async ctx => {
 export const getList = async ctx => {
 	let cond = ctx.request.body;
 	try {
-		let [domains, info] = await Promise.all([Domain.getList(cond), Domain.count()]);
+		let [domains, info] = await Domain.getList(cond);
 		ctx.body = success({info, domains});
 	} catch (err) {
 		ctx.body = err;
@@ -25,7 +25,7 @@ export const getList = async ctx => {
 export const remove = async ctx => {
 	let id = ctx.request.body.id;
 	try {
-		await nodebatis.query('domain.remove', {id});
+		await nodebatis.execute('domain.remove', {id});
 		ctx.body = success();
 	} catch (err) {
 		ctx.body = err;
