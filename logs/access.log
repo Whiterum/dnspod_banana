@@ -90,3 +90,6 @@
 [2016-08-05 20:31:39.212] [INFO] access - /Domain.List - POST - {} - 200 - 6ms
 [2016-08-05 20:33:23.946] [INFO] access - /Domain.Remove - POST - {"id":"135"} - 200 - 6ms
 [2016-08-05 20:33:30.016] [INFO] access - /Domain.List - POST - {} - 200 - 33ms
+[2016-08-06 21:58:13.709] [INFO] access - /Record.Create - POST - {"dns":"6","name":"www","type":"A","value":"129.126.3.2","mx":"0","enable":"1"} - 200 - 52ms
+[2016-08-06 22:06:23.116] [INFO] access - /Record.Create - POST - {"dns":"6","name":"www","type":"A","value":"129.126.3.2","mx":"0","enable":"1"} - 200 - 48ms
+[2016-08-06 22:09:15.075] [INFO] access - /Record.Create - POST - {"dns":"6","name":"www","type":"A","value":"129.126.3.2","mx":"0","enable":"1"} - 200 - 52ms

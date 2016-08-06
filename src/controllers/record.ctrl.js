@@ -3,7 +3,7 @@ import * as Domain from '../services/domain.service';
 import * as Record from '../services/record.service';
 import recordValidate from '../validate/record';
 
-export const create = async (ctx) => {
+export const create = async ctx => {
 	try {
 		let cond = ctx.request.body;
 		let errors = recordValidate.validate(cond);
@@ -21,18 +21,18 @@ export const create = async (ctx) => {
 	}
 }
 
-export const getList = async (ctx) => {
+export const getList = async ctx => {
 	
 }
 
-export const modify = async (ctx) => {
+export const modify = async ctx => {
 
 }
 
-export const remove = async (ctx) => {
+export const remove = async ctx => {
 
 }
 
-export const search = async (ctx) => {
+export const search = async ctx => {
 
 }

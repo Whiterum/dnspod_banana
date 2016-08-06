@@ -8,7 +8,7 @@ export const create = async name => {
 		conn = await nodebatis.beginTransation();
 		await conn.execute('domain.insert', {name, create_on, update_on});
 		let domain = await conn.execute('domain.findByName', {name});
-		nodebatis.commit(conn) ? console.log('commit success') : console.log('commit wrong');
+		nodebatis.commit(conn);
 		domain = domain[0];
 		return {domain};
 	} catch (err) {
