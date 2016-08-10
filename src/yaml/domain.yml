@@ -4,17 +4,17 @@ findAll:
     - select * from domain
 
 getList: 
-    - select * from domain order by id limit :offset, :length
+    - select * from domain ORDER BY do_id ASC LIMIT :offset,:length
 
 insert: 
     - insert into domain (name,create_on,update_on) VALUES (:name,:create_on,:update_on)
 
 findByName: 
-    - select id,name from domain where name = :name
+    - select do_id,name from domain where name = :name
 
 count:
-    - select count(id) as all_total from domain
+    - select count(do_id) as all_total from domain
 
 remove: 
-    - delete from domain where id = :id
+    - delete from domain where do_id = :id
 

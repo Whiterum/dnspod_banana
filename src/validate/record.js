@@ -1,10 +1,10 @@
 import schema from 'validate';
 
-export default schema({
-	dns: {
-		type: 'string',
+const record = schema({
+	do_id: {
+		type: 'number',
 		required: true,
-		message: 'dnsId is required'
+		message: 'dnsId is a number and required'
 	},
 	name: {
 		type: 'string',
@@ -32,3 +32,13 @@ export default schema({
 		message: 'enable is required'
 	}
 });
+
+const remove = schema({
+	do_id: {
+		type: 'number',
+		required: true,
+		message: 'do_id is required'
+	},
+	
+})
+export {record as recordValidate}

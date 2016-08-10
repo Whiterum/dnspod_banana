@@ -9,8 +9,8 @@ const nodebatis = new Nodebatis(path.resolve(__dirname, '../yaml'), {
 	host: '127.0.0.1',
 	port: 3306,
 	database: 'dnspod',
-	user: 'bezos',
-	password: '123456',
+	user: 'root',
+	password: 'root',
 	pool: {
 		minsize: 5,
 		maxsize: 20,

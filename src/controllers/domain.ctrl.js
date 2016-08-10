@@ -1,6 +1,7 @@
 import {success, error} from '../common/result';
 import * as Domain from '../services/domain.service';
 import nodebatis from '../config/dbconf';
+import {listValidate} from '../validate/domain';
 
 export const create = async ctx => {
 	let name = ctx.request.body.name;
@@ -15,8 +16,16 @@ export const create = async ctx => {
 export const getList = async ctx => {
 	let cond = ctx.request.body;
 	try {
-		let [domains, info] = await Domain.getList(cond);
-		ctx.body = success({info, domains});
+		let errors = listValidate.validate(cond);
+		if (errors.length === 0) {
+			let [domains, info] = await Domain.getList(cond);
+			ctx.body = success({info, domains});
+		} else {
+			ctx.body = error(-1, {
+				path: errors[0].path,
+				message: errors[0].message
+			});
+		}
 	} catch (err) {
 		ctx.body = err;
 	}

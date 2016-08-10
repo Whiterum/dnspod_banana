@@ -1,6 +1,6 @@
 create table domain (
-	id tinyint unsigned primary key auto_increment, 
-	status char(11) default "enable", 
+	do_id tinyint unsigned primary key auto_increment, 
+	do_status char(11) default "enable", 
 	ttl smallint default 600,
 	remark char(11), 
 	create_on datetime not null, 
@@ -11,16 +11,16 @@ create table domain (
 )engine=innodb default charset utf8;
 
 create table record (
-	id tinyint unsigned primary key auto_increment,
-	dns tinyint unsigned not null,
+	re_id tinyint unsigned primary key auto_increment,
+	do_id tinyint unsigned not null,
 	name char(5) not null,
-	line char(5) default "默认",
+	re_line char(5) default "默认",
 	type char(5) not null,
 	ttl smallint default 600,
-	value char(11) not null,
-	mx tinyint not null,
+	value char(20) not null,
+	mx char(2) not null,
 	enable char(2) not null,
 	remark char(11),
 	update_on datetime not null,
-	foreign key(dns) references domain(id)
+	foreign key(do_id) references domain(do_id)
 )engine=innodb default charset utf8;

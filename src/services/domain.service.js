@@ -26,7 +26,8 @@ export const getList = async cond => {
 		conn = await nodebatis.beginTransation();
 		if ('offset' in cond && 'length' in cond) {
 			let {offset, length} = cond;
-			domains = await conn.execute('domain.getList', {offset, length});
+			console.log(typeof offset);
+			domains = await conn.execute('domain.getList', {offset,length});
 		} else {
 			domains = await conn.execute('domain.findAll');
 		}
