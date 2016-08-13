@@ -7,7 +7,7 @@ create table domain (
 	update_on datetime not null, 
 	name char(20) unique not null,
 	grade_title char(11),
-	records tinyint
+	records tinyint default 0
 )engine=innodb default charset utf8;
 
 create table record (

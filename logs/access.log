@@ -158,3 +158,16 @@
 [2016-08-08 14:46:16.246] [INFO] access - /Record.Create - POST - {"do_id":1,"name":"think","type":"A","value":"129.126.3.2","mx":"1","enable":"1"} - 200 - 42ms
 [2016-08-08 14:47:30.180] [INFO] access - /Record.Create - POST - {"do_id":1,"name":"vuli","type":"A","value":"129.126.3.2","mx":"1","enable":"1"} - 200 - 49ms
 [2016-08-08 14:49:44.858] [INFO] access - /Record.Create - POST - {"do_id":1,"name":"kill","type":"A","value":"129.126.3.2","mx":"1","enable":"1"} - 200 - 45ms
+[2016-08-11 08:38:25.416] [INFO] access - /favicon.ico - GET - {} - 404 - 1ms
+[2016-08-11 09:34:19.037] [INFO] access - /Domain.Create - POST - {"name":"google.com"} - 200 - 34ms
+[2016-08-11 09:50:29.587] [INFO] access - /Record.Create - POST - {"do_id":6,"name":"www","type":"A","value":"129.126.3.2","mx":"0","enable":"1"} - 200 - 46ms
+[2016-08-11 09:51:07.593] [INFO] access - /Record.Create - POST - {"do_id":1,"name":"www","type":"A","value":"129.126.3.2","mx":"0","enable":"1"} - 200 - 7ms
+[2016-08-11 09:51:42.713] [INFO] access - /Record.Create - POST - {"do_id":1,"name":"www","type":"A","value":"129.126.3.2","mx":"0","enable":"1"} - 200 - 30ms
+[2016-08-11 09:52:21.987] [INFO] access - /Record.Create - POST - {"do_id":1,"name":"www","type":"A","value":"129.126.3.2","mx":"0","enable":"1"} - 200 - 50ms
+[2016-08-11 09:53:23.765] [INFO] access - /Record.Create - POST - {"do_id":1,"name":"blog","type":"A","value":"129.126.3.2","mx":"0","enable":"1"} - 200 - 48ms
+[2016-08-11 10:02:12.841] [INFO] access - /Record.Remove - POST - {"do_id":1,"re_id":"5"} - 200 - 22ms
+[2016-08-11 10:04:31.592] [INFO] access - /Record.Remove - POST - {"do_id":1,"re_id":"5"} - 200 - 31ms
+[2016-08-11 10:14:52.199] [INFO] access - /Record.Remove - POST - {"do_id":1,"re_id":"4"} - 200 - 43ms
+[2016-08-11 10:15:34.966] [INFO] access - /Record.Remove - POST - {"do_id":1,"re_id":"4"} - 200 - 43ms
+[2016-08-11 10:17:24.895] [INFO] access - /Record.Remove - POST - {"do_id":1,"re_id":"4"} - 200 - 8ms
+[2016-08-11 10:18:00.984] [INFO] access - /Record.Remove - POST - {"do_id":1,"re_id":"4"} - 200 - 51ms

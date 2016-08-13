@@ -1,6 +1,6 @@
 import schema from 'validate';
 
-const record = schema({
+export default schema({
 	do_id: {
 		type: 'number',
 		required: true,
@@ -32,13 +32,3 @@ const record = schema({
 		message: 'enable is required'
 	}
 });
-
-const remove = schema({
-	do_id: {
-		type: 'number',
-		required: true,
-		message: 'do_id is required'
-	},
-	
-})
-export {record as recordValidate}

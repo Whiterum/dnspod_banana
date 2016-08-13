@@ -11,4 +11,8 @@ insert:
 findByName: 
     - select re_id,name,enable from record where
     - do_id = :do_id
-    - and name = :name   
+    - and name = :name
+
+remove: 
+    - delete from record where
+    - re_id = :re_id

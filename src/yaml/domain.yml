@@ -18,3 +18,10 @@ count:
 remove: 
     - delete from domain where do_id = :id
 
+addRecord: 
+    - update domain set records=records+1 where
+    - do_id = :do_id
+
+diffRecord: 
+    - update domain set records=records-1 where
+    - do_id = :do_id
